@@ -5,7 +5,8 @@ import { DragDropContext } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 
 import initialData from './initial-data';
-import Column from './Column';
+// import Column from './Column';
+import ColumnHorizontal from './ColumnHorizontal';
 
 const Container = styled.div`
   display: flex;
@@ -89,7 +90,8 @@ class App extends React.Component {
             const column = this.state.columns[conlumnId];
             const tasks = column.taskIds.map(taskId => this.state.tasks[taskId]);
             
-            return <Column key={column.id} column={column} tasks={tasks} />;
+            // return <Column key={column.id} column={column} tasks={tasks} />;
+            return <ColumnHorizontal key={column.id} column={column} tasks={tasks} />;
           })}
         </Container>
       </DragDropContext>
